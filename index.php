@@ -47,7 +47,7 @@ else{
 		</div>
 		<div class="cl"></div>
 	</div>
-<!--	---------------------------------------------------------------------------------logos-->	
+<!--	---------------------------------------------------------------------------------logos--->	
 	<div class="container-fluid logo_banner">
 			<div class="col-3 jerk"><img src="image/logo_jerk.png" class="img-fluid"></div>
 			<div class="col-3 jerk"><img src="image/logo_rosemond.png" class="img-fluid"></div>
