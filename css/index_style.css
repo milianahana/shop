@@ -745,6 +745,7 @@ p{
 	background-size: cover;
 	height: 500px;
 	margin-top: -1%;
+}
 /*========================================================================================================================
 ==================================================================================================================shipping*/
 .product-shipping{
@@ -1641,8 +1642,6 @@ p{
 }
 .add_items_image img{
 	border-radius: 10px;
-}
-.add_items_content{
 }
 .add_items_content h1{
 	text-transform: capitalize;
