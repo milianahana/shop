@@ -261,7 +261,7 @@ if(!$select_login_table_statement){
 			<div class="col-6 " style="background-color: white">
 				<div class="col-12 add_items">
 					<div class="col-6"><h3>Employees</h3></div>
-					<div class="col-6 item_add_button"><a href="#">add</a></div>
+					<div class="col-6 item_add_button"><a href="labour_add.php">add</a></div>
 				</div>
 				<div class="col-12" style="overflow: scroll;height: 394px;">
 					<table class="products">

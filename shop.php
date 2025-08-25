@@ -73,7 +73,8 @@ if(!$select_displayed_items_statement)
 				<div class="row">
 				<?php
 				
-					$select_displayed_items2="SELECT `displayed_item_id`, `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate` FROM `displayed_items` LIMIT 4,8";
+					$select_displayed_items2="SELECT `displayed_item_id`, `displayed_item_image`, `displayed_item_overlay_image`, 
+					`displayed_item_name`, `displayed_item_category`, `displayed_item_rate` FROM `displayed_items` LIMIT 4,8";
 					$select_displayed_items_statement2=mysqli_query($con,$select_displayed_items2);
 					if(!$select_displayed_items_statement2)
 					{
@@ -116,7 +117,8 @@ if(!$select_displayed_items_statement)
 				<div class="row">
 				<?php
 				
-					$select_displayed_items2="SELECT `displayed_item_id`, `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate` FROM `displayed_items` LIMIT 8,16";
+					$select_displayed_items2="SELECT `displayed_item_id`, `displayed_item_image`, `displayed_item_overlay_image`, 
+					`displayed_item_name`, `displayed_item_category`, `displayed_item_rate` FROM `displayed_items` LIMIT 12,16";
 					$select_displayed_items_statement2=mysqli_query($con,$select_displayed_items2);
 					if(!$select_displayed_items_statement2)
 					{
