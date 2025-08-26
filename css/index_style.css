@@ -1504,63 +1504,66 @@ p{
 =======================================================================================================================
 ================================================================================================================
 ====================================================.login*/ 
-.form{
-	text-align: left;
-	background-color: #EEF2FE;
-	padding-bottom: 100px;
+.login_common_frame{
+	padding: 0;
 }
-.form h1{
+.form,.sform{
+	text-align: left;
+	background-image: linear-gradient(rgb(228, 228, 228), rgb(243, 243, 205)); 
+	height: auto;
+	margin-top: 125px;
+	backdrop-filter: blur(50px);
+}
+.form h1,.sform h1{
 	text-transform: capitalize;
 	padding-bottom: 1%;
-	padding-top: 20%;
-	color: rgba(128,152,235,1.00);
+	padding-top: 25%;
 	margin-left: 2%;
+	text-align: center;
+}
+.sform h1{
+	padding-top: 15% !important;
 }
 .form p{
 	color: #777;
+	text-align: center;
+}
+.sform p{
+	margin-top: 5px;
 }
 .signin_app{
 	display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 	padding-bottom: 15px;
 }
 .google{
 	display: flex;
     align-items: center;
-    width: 48%;
-    border-radius: 5px;
-    padding: 3%;
+    width: 35%;
+    border-radius: 100px;
+    padding: 2%;
     justify-content: space-evenly;
-	background-color: white;
+	border: 1px solid #777;
 }
 .formtags{
 	margin-top: 35px;
 	margin-left: 2%;
 }
+.signform{
+	margin-top: 35px;
+	margin-left: 2%;
+}
 .formtags p{
 	padding: 2% !important;
-	text-align: center;
 	color: #777;
 }
 .formtags labels{
 	color: rgba(128,152,235,1.00) !important;
-}
-.loginform input {
-    width: 100% !important;
-    padding: 3.5% !important;
-    color: #777;
-    margin-bottom: 3%;
-    font-size: 16px;
-    border-radius: 5px;
-    margin-top: 2%;
-    border: 0;
+	margin-left: 45px;
 }
 .forgot_pass{
 	float: right;
 	padding-bottom: 2%;
-}
-.sign_para{
-	text-align: center !important;
 }
 .signout{
 	font-size: 18px;
@@ -1578,22 +1581,34 @@ p{
 }
 /*linear-gradient(to top right, #E9EEFE , #BECCFC);*/
 .form-image{
-	background-image: url("../image/login (2).jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 750px;
-	margin-top: 10%;
+	margin-top:125px;
+	background-image: linear-gradient(rgb(228, 228, 228), rgb(243, 243, 205)); 
+	height: auto;
+	backdrop-filter: blur(50px);
+}
+.form-image img{
+	border-radius: 10px;
 }
 .formtags input{
-	width: 70%;
-	padding: 2%;
+	width: 80%;
+	padding: 3.5%;
 	color: #777;
 	margin-bottom: 3%;
 	font-size: 16px;
-	border-radius: 5px;
+	border-radius: 100px;
 	margin-top: 2%;
 	border: 0;
+	margin-left: 45px;
+}
+.sform input{
+	width: 74%;
+	padding: 2.5%;
+	color: #777;
+	margin-bottom: 3%;
+	font-size: 16px;
+	border-radius: 100px;
+	border: 0;
+	margin-left:100px;
 }
 .password{
 	margin-bottom: 10px;
@@ -1601,8 +1616,11 @@ p{
 .sign_para{
 	text-align: left !important;
 	padding: 0 !important;
+	margin-top: 154px;
 }
-
+.semail{
+	margin-top: 10px;
+}
 /*==============================================================================================================
 =============================================================================================================================
 ========================================================================================================================

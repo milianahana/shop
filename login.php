@@ -64,25 +64,24 @@ if(isset($_SESSION['id']))
 	</div>
 	<div class="container-fluid signin-page">
 		<div class="col-12 login_common_frame">
-		<div class="col-8 form-image"></div>
 		<div class="col-4 form">
 			<h1>Get started</h1>
 			<p>Enter your credentials to login your account</p>
-			<form action="login_action.php" class="formtags loginform" method="post" onSubmit="return validate()">
+			<form action="login_action.php" class="formtags" method="post" onSubmit="return validate()">
+				<label style="margin-left:45px;color:#777;">Email</label><br>
+      			<input placeholder="Username/Email" type="text" class="email" id="em" name="email" onChange="removeValidation('em');"><br>
+				<label style="margin-left:45px;color:#777;">Password</label><br>
+      			<input placeholder="Password" type="password" class="password" id="pass" name="password" onChange="removeValidation('pass');"><br>
+				<a href="#" class="forgot_pass">forgot password?</a>
+      			<input type="submit" name="submit" value="Sign In" class="signin" style="background-color: #F2CC07;">
 				<div class="signin_app">
 					<a class="google"><img src="image/google.png" width="13%;">Sign in with Google</a>
 					<a class="google"><img src="image/facebook(2).png" width="13%;">Sign in with Facebook</a>
 				</div>
-				<p>or</p>
-				<label>Email</label><br>
-      			<input placeholder="Username/Email" type="text" class="email" id="em" name="email" onChange="removeValidation('em');"><br>
-				<label>Password</label><br>
-      			<input placeholder="Password" type="password" class="password" id="pass" name="password" onChange="removeValidation('pass');"><br>
-				<a href="#" class="forgot_pass">forgot password?</a>
-      			<input type="submit" name="submit" value="Sign In" class="signin">
-				<p class="sign_para">Don't have an account yet? <a href="signin.php">SignIn</a></p>
       		</form>
+			<p class="sign_para">Don't have an account yet? <a href="signin.php">SignIn</a></p>
 		</div>
+		<div class="col-8 form-image"><img src="image/about-banner.jpg" alt="" class="img-fluid"></div>
 			</div>
 	</div>
 	<script>

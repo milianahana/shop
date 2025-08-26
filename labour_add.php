@@ -48,12 +48,12 @@ if(!$select_login_table_statement){
 			</div>
 			<div class="col-6 add_items_content">
 				<h1>add new items</h1>
-				<form action="items_add_form_action.php" class="items_add" method="post" enctype="multipart/form-data" onSubmit="return validate()">
-					<input type="file" name="item" class="item_image" id="item_image" style="border: none;" onSubmit="return validate()">
-					<input placeholder="Id.no" type="text" class="name" name="item_name" id="item_name" onSubmit="return validate()">
-					<input placeholder="Name" type="text" class="category" name="item_category" id="item_category" onSubmit="return validate()">
+				<form action="labour_add_action.php" class="items_add" method="post" enctype="multipart/form-data" onSubmit="return validate()">
+					<input type="file" name="l_image" class="item_image" id="item_image" style="border: none;" onSubmit="return validate()">
+					<input placeholder="Id.no" type="text" class="name" name="code" id="item_name" onSubmit="return validate()">
+					<input placeholder="Name" type="text" class="category" name="labour_name" id="item_category" onSubmit="return validate()">
 					<textarea placeholder="Address" name="address" id="adrs" style="width: 100%;height: 115px;font-size: 16px;padding: 12px;"></textarea>					
-					<input placeholder="Phone.no" type="text" class="sort" name="item_sort" id="item_sort" onSubmit="return validate()" >
+					<input placeholder="Phone.no" type="text" class="sort" name="labour_no" id="item_sort" onSubmit="return validate()" >
 					<input type="submit" name="add" value="Add" class="addItem">
 				</form>
 			</div>
