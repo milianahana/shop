@@ -1628,9 +1628,6 @@ p{
 .admin-top-line{
 	border-bottom: 1px solid #E5E5E5;
 }
-.add_items_top{
-	margin: 50px 0;
-}
 .admin-menu{
 	display: flex;
     align-items: center;
@@ -1700,6 +1697,13 @@ p{
 .item_add_button a:hover{
 	background-color: whitesmoke;
 	cursor: pointer;
+}
+.item_background{
+	background-image: url("../image/about-banner.jpg");
+    height: 1009px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /*=============================================================================================================
 ==================================================================================================================
@@ -2025,4 +2029,43 @@ p{
     align-content: flex-start;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+/*=============================================================================================================
+==================================================================================================================
+===================================================================================================================
+=========================================.admin_profile*/ 
+.admin_profile{
+	padding: 5% 0 0 5%;
+}
+.admin_profile_ribbon{
+	background-color: yellowgreen;
+}
+.admin_profile_align{
+	display: flex;
+	align-items: center;
+}
+.admin_profile_picture{
+	display: flex;
+	align-items: center;
+}
+.admin_profile_edit a{
+	background-color: #ddd;
+	padding: 2% 5%;
+	border-radius: 5px;
+	text-transform: capitalize;
+	color: black;
+}
+.admin_profile_edit{
+	display: flex;
+    justify-content: space-around;
+}
+.profile_para{
+	background-color: #f1f1f1;
+	border-radius: 10px;
+	padding: 1%;
+}
+.email_scn{
+	display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }

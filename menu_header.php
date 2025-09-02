@@ -49,7 +49,7 @@ if(isset($_SESSION['id']))
 				<a href="about_us.php">about us</a>
 			</div>
 			<div class="col-4 menu2">
-				<a href="login.php">Log In</a>
+				<a href="login.php">Log Out</a>
 				<a href="wishlist.php"><img src="image/heart.png" width="25px"></a>
 				<a href="#"><img src="image/shopping-cart-add.png" width="25px"></a>
 				<a href="#"><span class="blue-btn">Rs. 0.00</span></a>

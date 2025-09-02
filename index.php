@@ -145,16 +145,16 @@ else{
 				<div class="row">
 					<?php
 					
-//					$select_displayed_items2="SELECT  `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate` FROM `displayed_items` WHERE displayed_item_sort=2 LIMIT 0,8 ";
-//					$select_displayed_item_statement2=mysqli_query($con,$select_displayed_items2);
-//					
-//					while($items_data2=mysqli_fetch_array($select_displayed_item_statement2))
-//					{
-//						$add_item_image=$items_data2['displayed_item_image'];
-//						$add_item_overlay_image=$items_data2['displayed_item_overlay_image'];
-//						$add_item_name=$items_data2['displayed_item_name'];
-//						$add_item_category=$items_data2['displayed_item_category'];
-//						$add_item_price=$items_data2['displayed_item_rate'];
+					/*$select_displayed_items2="SELECT  `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate` FROM `displayed_items` WHERE displayed_item_sort=2 LIMIT 0,8 ";
+					$select_displayed_item_statement2=mysqli_query($con,$select_displayed_items2);
+					
+					while($items_data2=mysqli_fetch_array($select_displayed_item_statement2))
+					{
+						$add_item_image=$items_data2['displayed_item_image'];
+						$add_item_overlay_image=$items_data2['displayed_item_overlay_image'];
+						$add_item_name=$items_data2['displayed_item_name'];
+						$add_item_category=$items_data2['displayed_item_category'];
+						$add_item_price=$items_data2['displayed_item_rate'];*/
 					foreach($seller as $x){
 						$add_item_image=$x['displayed_item_image'];
 						$add_item_overlay_image=$x['displayed_item_overlay_image'];

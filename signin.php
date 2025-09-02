@@ -64,10 +64,10 @@ if(isset($_SESSION['id']))
 		</div><hr>
 	</div>
 	<div class="container-fluid signin-page">
-		<div class="col-6 form-image">
+		<div class="col-7 form-image">
 			<img src="image/blog-banner1.jpg" alt="" class="img-fluid">
 		</div>
-		<div class="col-6 sform">
+		<div class="col-5 sform">
 			<h1>create an account</h1>
 			<form action="signin_action.php" class="signform" method="post" enctype="multipart/form-data" onSubmit="return validate()">
 				<input type="file" name="image" class="user_image" id="userimage" style="padding: 0;margin-bottom:0;border-radius:0;margin-left: 350px;"><br>
@@ -76,7 +76,7 @@ if(isset($_SESSION['id']))
       			<input placeholder="Username/Email" type="email" class="semail" id="em" name="email" onChange="removeValidation('em');">
       			<input placeholder="Password" type="password" class="password" id="pass" name="password" onChange="removeValidation('pass');">
       			<input placeholder="username" type="text" class="username" id="username" name="username" onChange="removeValidation('username');">
-      			<input type="submit" name="submit" value="Sign In" class="signin">
+      			<input type="submit" name="submit" value="Sign In" class="signin" style="margin-bottom: 218px;">
 				<p>Don't Have An Account <a href="#">SignIn</a></p>
       		</form>
 		</div>

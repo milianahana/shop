@@ -43,8 +43,7 @@ if(!$select_login_table_statement){
 	<div class="cl"></div>
 	<div class="container-fluid">
 		<div class="w">
-			<div class="col-6" style="background-image: url(image/about-banner.jpg);height:300px;">
-
+			<div class="col-6 item_background">
 			</div>
 			<div class="col-6 add_items_content">
 				<h1>add new items</h1>

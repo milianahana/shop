@@ -40,8 +40,7 @@ if(!$select_login_table_statement){
 		<div class="cl"></div>
 	</div>
 	<div class="container-fluid add_items_top">
-		<div class="col-9 add-container">
-			<div class="col-12 add_items_outerline">
+		<div class="contain">
 				<div class="col-6 add_items_image">
 					<img src="image/add_item_illustration.jpg" alt="" class="img-fluid">
 				</div>
@@ -58,7 +57,6 @@ if(!$select_login_table_statement){
 						<input type="submit" name="add" value="Add" class="addItem">
 					</form>
 				</div>
-			</div>
 			<div class="cl"></div>
 		</div>
 	</div>
