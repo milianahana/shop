@@ -1,6 +1,11 @@
 <?php
 include ('menu_header.php');
+
+
+ if(isset($_SESSION['id'])) {
+    $login_id = $_SESSION['id'];
 ?>
+
 <!---------------------------------------------------------------------------	about_banner-->
 	<div class="container-fluid aboutus-topbanner">
 		<div class="container aboutus-top">
@@ -134,5 +139,18 @@ include ('menu_header.php');
 	</div>
 
 <?php 
-include('footer.php')
+include('footer.php');
+
+} 
+	else{ 
 ?>
+<div class="container-fluid">
+	<div class="col-12 error_pages3">
+		<h1>404</h1>
+		<h2>PAGE NOT FOUND</h2>
+		<p>Something went wrong,Login for more access</p>
+		<a href="login.php">LOGIN</a><br>
+		<a href="index.php" class="back">GO BACK</a>
+	</div>
+</div>
+<?php } ?>

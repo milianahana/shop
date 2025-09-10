@@ -48,7 +48,7 @@ if(isset($_POST['submit']))
 						
 				if(move_uploaded_file($_FILES['image']['tmp_name'],$image))
 				{
-					// header('location:index.php');
+					header('location:index.php');
 				}
 				else{
 					echo "Something went wrong";

@@ -1,13 +1,13 @@
 
 	<?php
-	
+	session_start();
 	include('indoor_database.php');
 
 	$signin_user_profile = "default_profile.png";
 	$login_id = "";
 
 	if(isset($_SESSION['id'])) {
-    $login_id = $_SESSION['id'];
+    echo $login_id = $_SESSION['id'];
 
     $signin_select_statement = $con->prepare("SELECT `signin_profile` FROM `signin` WHERE signin_login_id = ?");
     $signin_select_statement->bind_param("i", $login_id);
@@ -18,11 +18,14 @@
         $signin_user_profile = $login_data['signin_profile'];
     }
 	$signin_select_statement->close();
+
+}else{
+    echo "error";
 }
 	
 	?>
 
-	<!doctype html>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -34,7 +37,7 @@
 </head>
 
 <body>
-	<!---------------------------------------------------------------------------	menu_bar-->
+<!---------------------------------------------------------------------------	menu_bar-->
 <div class="condainer-fluid menu_bar">
     <div class="menu">
         <div class="col-3 logo">

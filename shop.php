@@ -1,7 +1,13 @@
  <?php
+
 include ('menu_header.php');
 
 include('indoor_database.php');
+
+ if(isset($_SESSION['id'])) {
+    $login_id = $_SESSION['id'];
+
+	
 
 $select_displayed_items="SELECT `displayed_item_id`, `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate` FROM `displayed_items` LIMIT 0,4";
 $select_displayed_items_statement=mysqli_query($con,$select_displayed_items);
@@ -172,45 +178,23 @@ if(!$select_displayed_items_statement)
 		</div>
 		<div class="cl"></div>
 	</div>
-<!--	---------------------------------------------------------------------------------footer1-->
-<!--
-	<div class="container-fluid">
-		<div class="container collections">
-			<p class="para4-p">indoor collections</p>
-			<h1>our collections</h1>
-			<p>Built a tested code base or had them built, you decided on a content.</p>
-			<div class="col-3 collection-imgs"><img src="image/gallery_vase.png" class="img-fluid"></div>
-			<div class="col-3 collection-imgs"><img src="image/gallery_sofa.jpg" class="img-fluid"></div>
-			<div class="col-3 collection-imgs"><img src="image/gallery_livingroom2.png" class="img-fluid"></div>
-			<div class="col-3 collection-imgs"><img src="image/gallery_decoration.png" class="img-fluid"></div>
-			<div class="col-12 dots">&#x25CF; &#x25CF; &#x25CF;</div>
-		</div>
-		<div class="cl"></div>
-		<div class="container footer-menu">
-			<h1>indoor</h1>
-				<a href="#">home</a>
-				<a href="shop.php">shop</a>
-				<a href="blog.php">blog</a>
-				<a href="#">about us</a>
-		</div><hr class="footer-line">
-		<div class="cl"></div>
-		<div class="container">
-			<div class="col-6"><p class="footer-p">Copyright @ 2025 Indoor Loreal London-All Rights Reserved</p></div>
-			<div class="col-6">
-				<div class="col-1"><img src="image/footer_facebook.png" alt="" width="200%"></div>
-				<div class="col-1"><img src="image/footer_instagram.png" alt="" width="200%"></div>
-				<div class="col-1"><img src="image/footer_twitter.png" alt="" width="200%"></div>
-				<div class="col-1"><img src="image/footer_pintrest.png" alt="" width="200%"></div>
-				<div class="col-1"><img src="image/footer_youtube.png" alt="" width="200%"></div>
-			</div>
-		</div>
-		<div class="cl"></div>
-	</div>
--->
-
 <?php 
-include('footer.php');
+	include('footer.php');
+} 
+	else{ 
 ?>
+
+<div class="container-fluid">
+	<div class="col-12 error_pages">
+		<h1>404</h1>
+		<h2>PAGE NOT FOUND</h2>
+		<p>Something went wrong,Login for more access</p>
+		<a href="login.php">LOGIN</a><br>
+		<a href="index.php" class="back">GO BACK</a>
+	</div>
+</div>
+<?php } ?>
+
 	<script>
 		function shopProduct(pages) {
 		const allPages = ['pageOne', 'pageTwo', 'pageThree'];
