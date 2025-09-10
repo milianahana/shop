@@ -10,7 +10,7 @@
 </head>
 
 <body>
-        <div class="col-12 admin_profile" id="profile" style="display: none;">
+        <div class="col-12 admin_profile" id="profile" style="padding: 0;">
             <div class="procon">
                 <div class="col-12 admin_profile_ribbon">
                 </div>
@@ -21,45 +21,48 @@
                             <p>djhfdui</p>
                         </div>
                     </div>
-                    <div class="col-4 admin_profile_edit"><a href="#">edit</a></div>
+                    <div class="col-4 admin_profile_edit"><a href="admin_home.php" style="background-color: yellowgreen;">back</a></div>
                 </div>
-                <div class="col-12">
-                    <div class="col-6">
-                        <h4>Full Name</h4>
-                        <p class="profile_para">kvkfvjkf</p>
+                <form action="admin_profile_edit_form_action.php" method="post" enctype="multipart/form-data" class="profile_form">
+                    <div class="col-12">
+                        <div class="col-6">
+                            <h4>Full Name</h4>
+                            <input class="profile_input"></input>
+                        </div>
+                        <div class="col-6">
+                            <h4>User Name</h4>
+                            <input class="profile_input"></input>
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <h4>User Name</h4>
-                        <p class="profile_para">kvkfvjkf</p>
+                    <div class="col-12">
+                        <div class="col-6">
+                            <h4>Gender</h4>
+                            <div style="display:flex;justify-content:space-between;">
+                                <label for="male" class="male"> Male</label>
+                                <input type="radio" id="male" value="male" name="a_gen"required >
+                                <label for="female"> Female</label>
+                                <input type="radio" id="female" value="female" name="a_gen" required ><br>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h4>Country</h4>
+                            <input class="profile_input"></input>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12">
-                    <div class="col-6">
-                        <h4>Gender</h4>
-                        <p class="profile_para">kvkfvjkf</p>
+                    <div class="col-12">
+                        <div class="col-6">
+                            <h4>Language</h4>
+                            <input class="profile_input"></input>
+                        </div>
+                        <div class="col-6">
+                            <h4>Time Zone</h4>
+                            <input class="profile_input"></input>
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <h4>Country</h4>
-                        <p class="profile_para">kvkfvjkf</p>
+                    <div class="col-12" style="display: flex;justify-content:center;align-items:center;">
+                        <input type="submit" name="submit" value="Update" class="ap_sbmt">
                     </div>
-                </div>
-                <div class="col-12">
-                    <div class="col-6">
-                        <h4>Language</h4>
-                        <p class="profile_para">kvkfvjkf</p>
-                    </div>
-                    <div class="col-6">
-                        <h4>Time Zone</h4>
-                        <p class="profile_para">kvkfvjkf</p>
-                    </div>
-                </div>
-                <h3 style="padding-left: 25px; margin-top:5px;">My Email Address</h3>
-                <div class="col-12">
-                    <div class="email_scn"><img src="image/facebook(2).png" alt="">hendy@gmail.com</div>
-                </div>
-                <div class="col-12">
-                    <a href="#">+ Add Email Address</a>
-                </div>
+                </form>
             </div>
         </div>
 </body>

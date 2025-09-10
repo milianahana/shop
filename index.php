@@ -1,5 +1,7 @@
  <?php
 
+ session_start();
+
 include ('menu_header.php');
 
 include('indoor_database.php');
@@ -319,9 +321,9 @@ include ('footer.php');
 		document.getElementById("best_seller").style.display="none";
 		document.getElementById("featured").style.display="none";
 		document.getElementById("sales").style.display="block";
-	}*/
+	}
 	
-	/*function homeProduct(division){
+	function homeProduct(division){
 		document.getElementById(division).style.display="block";
 	}*/
 	function homeProduct(division) {

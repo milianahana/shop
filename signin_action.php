@@ -12,7 +12,7 @@ if(isset($_POST['submit']))
 	$signin_usertype="user";
 	
 	
-	/*$select_login="SELECT `login_id` FROM `login` WHERE login_email='$signin_email' and login_password='$signin_password'";
+	$select_login="SELECT `login_id` FROM `login` WHERE login_email='$signin_email' and login_password='$signin_password'";
 	var_dump($select_login);
 	$select_login_statement=mysqli_query($con,$select_login);
 	
@@ -36,31 +36,26 @@ if(isset($_POST['submit']))
 			}
 			else{
 				$login_id=mysqli_insert_id($con);
-				$signin_insert="INSERT INTO `signin`(`signin_login_id`, `signin_email`, `signin_password`, `signin_username`, `signin_profile`) VALUES ('$login_id','$signin_email','$signin_password','$signin_username','$signin_user_profile')";
+				$signin_insert="INSERT INTO `signin`(`signin_login_id`, `signin_email`, `signin_password`, `signin_username`, `signin_profile`) 
+				VALUES ('$login_id','$signin_email','$signin_password','$signin_username','$signin_user_profile')";
 				$signin_insert_statement=mysqli_query($con,$signin_insert);
 				if(!$signin_insert_statement)
 				{
 					echo "cant insert into signin";
 				}				
-				if($signin_user_profile==""){
-					$signin_user_profile=$signin_user_profile_default;
-				}
-				$signin_update="INSERT INTO `signin`(`signin_profile`) VALUES ('$signin_user_profile_default')";
-				$signin_update_statement=mysqli_query($con,$signin_update);
-				
 				$path="image/profiles_pictures/";
 				$image=$path.basename($signin_user_profile);
 						
 				if(move_uploaded_file($_FILES['image']['tmp_name'],$image))
 				{
-					header('location:index.php');
+					// header('location:index.php');
 				}
 				else{
 					echo "Something went wrong";
 				}
 			}
 		}
-	}*/
+	}
 }
 
 ?>

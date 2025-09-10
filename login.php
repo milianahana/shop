@@ -16,10 +16,8 @@ if(isset($_SESSION['id']))
 	{
 		echo "error";
 	}
-	else{
-		$login_array=array();
-	}
-}*/
+}	*/
+		// no need for profile so commended
 ?>
 <!doctype html>
 <html><head>
@@ -36,7 +34,7 @@ if(isset($_SESSION['id']))
 	<div class="condainer-fluid menu_bar">
 		<div class="menu">
 			<?php
-					/*$login_data=mysqli_fetch_array($signin_select_statement);
+				/*$login_data=mysqli_fetch_array($signin_select_statement);
 						
 					$signin_user_profile=$login_data['signin_profile'];*/
 				?>

@@ -295,7 +295,7 @@ if(!$select_login_table_statement){
 							<p>djhfdui</p>
 						</div>
 					</div>
-					<div class="col-4 admin_profile_edit"><a href="#">edit</a></div>
+					<div class="col-4 admin_profile_edit" style="position:relative;"><a href="admin_profile_edit.php">edit</a></div>
 				</div>
 				<div class="col-12">
 					<div class="col-6">
