@@ -1,5 +1,5 @@
  <?php
-
+ 
 include ('menu_header.php');
 
 include('indoor_database.php');
