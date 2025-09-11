@@ -120,12 +120,12 @@ else{
       					<div class="col3 five pot">
 							<div class="con2">
 								<div class="con">
-									<div class="product1">
+									<div class="product1"><a href="single-product.php">
 										<img src="image/item_images/<?php echo $x['displayed_item_image'];?>" alt="" class="img-fluid">
-										<div class="overlayimage"><img src="image/item_images/<?php echo $x['displayed_item_overlay_image'];?>" alt="" class="img-fluid"></div>
+										<div class="overlayimage"><img src="image/item_images/<?php echo $x['displayed_item_overlay_image'];?>" alt="" class="img-fluid"></div></a>
 									</div>
 									<div class="overlay">
-										<div class="textshop"><a href="#">add to cart</a></div>
+										<div class="textshop"><a href="add_to_cart.php">add to cart</a></div>
 									</div>
 									<div class="overlay2">
 										<div class="text2"><input type="button" name="like" class="like" id="like"><img src="image/heart.png" width="25" class="heart"><br><img src="image/shopping-cart-add.png" width="25" class="cart"><br> </div>

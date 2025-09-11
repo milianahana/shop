@@ -2088,6 +2088,10 @@ p{
 	padding-bottom: 15px;
 	margin-left: 2px;
 }
+/*=============================================================================================================
+==================================================================================================================
+===================================================================================================================
+=========================================.error-page*/ 
 .error_pages{
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/error_background3.jpg);
 	background-position: center;
@@ -2160,4 +2164,68 @@ p{
 	align-items: center;
 	flex-direction: column;
 	color: white;
+}
+/*=============================================================================================================
+==================================================================================================================
+===================================================================================================================
+=========================================.add_to_cart*/ 
+.cart_top{
+	margin-top: 8%;
+	text-align: center;
+}
+.cart_details{
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.cart_color{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cart_color p{
+	text-align: start;
+}
+.cart_details p{
+	color: #777;
+}
+.cart_to_details h4{
+	color: #555555;
+}
+.count{
+	width: 50%;
+	border: .5px solid #555;
+	border-radius: 5px;
+	padding: 2%;
+}
+.cart_top a{
+	text-align: start;
+	color: #555;
+	padding-right: 10px;
+}
+.cart_top a:hover{
+	color: blue;
+}
+.summary{
+	box-shadow: 0px 0px 10px #efefef;
+	border-radius: 10px;
+}
+.summary h2{
+	margin-top: 5%;
+	margin-bottom: 10%;
+}
+.summary_out{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+	color: #555;
+}
+.summary button{
+	margin-top: 10%;
+	width: 100%;
+	padding: 2%;
+	background-color: #FFD93D;
+	border-radius: 5px;
+	border: .5px solid #efefef;
+	font-size: 21px;
 }

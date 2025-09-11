@@ -19,9 +19,7 @@
     }
 	$signin_select_statement->close();
 
-}else{
-    echo "error";
-}
+    }
 	
 	?>
 
