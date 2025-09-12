@@ -7,7 +7,7 @@ include('indoor_database.php');
 if(isset($_POST['add']))
 {
 	$add_item_image=$_FILES['item']['name'];
-	echo $add_item_overlay_image=$_FILES['overlay_item']['name'];
+	$add_item_overlay_image=$_FILES['overlay_item']['name'];
 	$add_item_name=$_POST['item_name'];
 	$add_item_category=$_POST['item_category'];
 	$add_item_price=$_POST['item_price'];
@@ -35,6 +35,12 @@ if(isset($_POST['add']))
 				echo "error in inserting";
 			}
 			else{
+
+				$p_array=mysqli_fetch_array($insert_displayed_item_statement);
+				$product_id= $p_array['displayed_item_id'];
+
+				$_SESSION['pid']=$product_id;
+
 				$item_path="image/item_images/";
 				$item_image=$item_path.basename($add_item_image);
 				$item_overlay_image=$item_path.basename($add_item_overlay_image);

@@ -7,7 +7,7 @@
 	$login_id = "";
 
 	if(isset($_SESSION['id'])) {
-    echo $login_id = $_SESSION['id'];
+    $login_id = $_SESSION['id'];
 
     $signin_select_statement = $con->prepare("SELECT `signin_profile` FROM `signin` WHERE signin_login_id = ?");
     $signin_select_statement->bind_param("i", $login_id);

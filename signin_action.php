@@ -5,8 +5,8 @@ include('indoor_database.php');
 if(isset($_POST['submit']))
 {
 	$signin_user_profile=$_FILES['image']['name'];
-	echo $signin_user_profile_default=$_POST['image_default'];
-	echo $signin_email=$_POST['email'];
+	$signin_user_profile_default=$_POST['image_default'];
+	$signin_email=$_POST['email'];
 	$signin_password=$_POST['password'];
 	$signin_username=$_POST['username'];
 	$signin_usertype="user";

@@ -31,11 +31,12 @@ include ('menu_header.php');
 				</div>
 				
 				<div class="col-3 number">
-					<div class="col-2 mi"><p>&#x2212;</p></div>
+					<!-- <div class="col-2 mi"><p>&#x2212;</p></div>
 					<div class="col-2 no"><p>1</p></div>
-					<div class="col-2 pl"><p>&#x2b;</p></div>
+					<div class="col-2 pl"><p>&#x2b;</p></div> -->
+					<input type="number" style="width: 114%;padding: 13%;" value="1">
 				</div>
-				<div class="col-9 add"><a href="#">add to cart</a></div>
+				<div class="col-9 add"><a href="add_to_cart.php">add to cart</a></div>
 				<div class="cl"></div>
 				<div class="col-4 single-icons">&#x2928; Add to compare</div><div class="col-4">&#x2665; Add to wishlist</div><div class="col-4">&#x2928; Size Guide</div>
 				<hr>

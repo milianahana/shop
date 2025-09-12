@@ -290,7 +290,12 @@ p{
 	height: 0;
 	transition: .5s ease;
 }
-
+.textshop_input{
+	background-color: transparent;
+	border: none ;
+	color: white;
+    font-size: 16px;
+}
 .con:hover .overlay {
 	height: 17%;
 	cursor: pointer;
