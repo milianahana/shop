@@ -4,12 +4,10 @@ include ('menu_header.php');
 
 include('indoor_database.php');
 
-//$select_displayed_items="SELECT  `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate` FROM `displayed_items` WHERE displayed_item_sort=1 LIMIT 0,8";
 $select_sorted="SELECT COUNT(*) cont, displayed_item_sort FROM `displayed_items` WHERE displayed_item_sort IN(1,2,3) GROUP BY displayed_item_sort";
 $select_sorted_statement=mysqli_query($con,$select_sorted);
 while($fetch_sort=mysqli_fetch_array($select_sorted_statement))
 {
-//	echo $count=$fetch_sort['cont'];
 	switch($fetch_sort['displayed_item_sort']){
 			
 		case 1:
@@ -23,7 +21,7 @@ while($fetch_sort=mysqli_fetch_array($select_sorted_statement))
 			break;
 	}
 }
-$select_displayed_items="SELECT  `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate`, displayed_item_sort FROM `displayed_items` WHERE displayed_item_sort IN(1,2,3)";
+$select_displayed_items="SELECT  `displayed_item_id`, `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate`, displayed_item_sort FROM `displayed_items` WHERE displayed_item_sort IN(1,2,3)";
 $select_displayed_item_statement=mysqli_query($con,$select_displayed_items);
 if(!$select_displayed_item_statement)
 	{
@@ -103,18 +101,7 @@ else{
 								$sales[] = $items_data;
 							break;
 						}
-//						$as[] = $items_data;
-						/*$add_item_image=$items_data['displayed_item_image'];
-						$add_item_overlay_image=$items_data['displayed_item_overlay_image'];
-						$add_item_name=$items_data['displayed_item_name'];
-						$add_item_category=$items_data['displayed_item_category'];
-						$add_item_price=$items_data['displayed_item_rate'];*/
 					}
-				/*	var_dump($as);
-					echo "Seller Items";
-					var_dump($seller);
-					echo "Sales Items";
-					var_dump($sales);*/
 					foreach($as as $x){
 					?>
 					<div class="column">
@@ -126,7 +113,7 @@ else{
 										<div class="overlayimage"><img src="image/item_images/<?php echo $x['displayed_item_overlay_image'];?>" alt="" class="img-fluid"></div></a>
 									</div>
 									<div class="overlay">
-										<div class="textshop"><a href="#"><form action="add_to_cart_action.php" method="post"><input type="submit" name="add" value="Add to Cart" class="textshop_input"></form></a></div>
+										<div class="textshop"><a href="add_to_cart.php?product_id=<?php echo $x['displayed_item_id'];?>">Add to Cart</a></div>
 									</div>
 									<div class="overlay2">
 										<div class="text2"><input type="button" name="like" class="like" id="like"><img src="image/heart.png" width="25" class="heart"><br><img src="image/shopping-cart-add.png" width="25" class="cart"><br> </div>
@@ -145,17 +132,7 @@ else{
 			<div id="featured" class="col-12 products" style="display: none;">
 				<div class="row">
 					<?php
-					
-					/*$select_displayed_items2="SELECT  `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate` FROM `displayed_items` WHERE displayed_item_sort=2 LIMIT 0,8 ";
-					$select_displayed_item_statement2=mysqli_query($con,$select_displayed_items2);
-					
-					while($items_data2=mysqli_fetch_array($select_displayed_item_statement2))
-					{
-						$add_item_image=$items_data2['displayed_item_image'];
-						$add_item_overlay_image=$items_data2['displayed_item_overlay_image'];
-						$add_item_name=$items_data2['displayed_item_name'];
-						$add_item_category=$items_data2['displayed_item_category'];
-						$add_item_price=$items_data2['displayed_item_rate'];*/
+
 					foreach($seller as $x){
 						$add_item_image=$x['displayed_item_image'];
 						$add_item_overlay_image=$x['displayed_item_overlay_image'];
@@ -172,7 +149,7 @@ else{
 										<div class="overlayimage"><img src="image/item_images/<?php echo $add_item_overlay_image;?>" alt="" class="img-fluid"></div>
 									</div>
 									<div class="overlay">
-										<div class="textshop"><a href="#"><input type="submit" name="add" value="Add to Cart" class="textshop_input"></a></div>
+										<div class="textshop"><a href="#">Add to Cart</a></div>
 									</div>
 									<div class="overlay2">
 										<div class="text2"><input type="button" name="like" class="like" id="like"><img src="image/heart.png" width="25" class="heart"><br><img src="image/shopping-cart-add.png" width="25" class="cart"><br> </div>
@@ -190,18 +167,7 @@ else{
 			<div id="sales" class="col-12 products" style="display: none;">
 				<div class="row">
 					<?php
-					
-					/*$select_displayed_items3="SELECT  `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate` FROM `displayed_items` WHERE displayed_item_sort=3 LIMIT 0,8 ";
-					$select_displayed_item_statement3=mysqli_query($con,$select_displayed_items3);
-					
-					while($items_data3=mysqli_fetch_array($select_displayed_item_statement3))
-					{
-						$add_item_image=$items_data3['displayed_item_image'];
-						$add_item_overlay_image=$items_data3['displayed_item_overlay_image'];
-						$add_item_name=$items_data3['displayed_item_name'];
-						$add_item_category=$items_data3['displayed_item_category'];
-						$add_item_price=$items_data3['displayed_item_rate'];*/
-					
+	
 						foreach($sales as $x){
 						$add_item_image=$x['displayed_item_image'];
 						$add_item_overlay_image=$x['displayed_item_overlay_image'];
@@ -218,7 +184,7 @@ else{
 										<div class="overlayimage"><img src="image/item_images/<?php echo $add_item_overlay_image;?>" alt="" class="img-fluid"></div>
 									</div>
 									<div class="overlay">
-										<div class="textshop"><a href="#"><input type="submit" name="add" value="Add to Cart" class="textshop_input"></a></div>
+										<div class="textshop"><a href="#">Add to Cart</a></div>
 									</div>
 									<div class="overlay2">
 										<div class="text2"><input type="button" name="like" class="like" id="like"><img src="image/heart.png" width="25" class="heart"><br><img src="image/shopping-cart-add.png" width="25" class="cart"><br> </div>

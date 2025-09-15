@@ -2,16 +2,42 @@
 
 include ('menu_header.php');
 
+if(isset($_GET['product_id']))
+{
+	$product_id=$_GET['product_id'];
+
+$select_displayed_items="SELECT `displayed_item_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate`, displayed_item_sort FROM 
+`displayed_items` WHERE `displayed_item_id`='$product_id'";
+$select_displayed_item_statement=mysqli_query($con,$select_displayed_items);
+if(!$select_displayed_item_statement)
+	{
+		echo "error in connecting";
+	}
+}
+
+ 
+    
+
 ?>
 <div class="container-fluid cart_top">
      <div class="col-12">
         <h1>My Cart</h1>
         <div class="col-8">
         <hr>
+        <?php
+			while($items_data=mysqli_fetch_array($select_displayed_item_statement))
+            {
+                $add_item_image=$items_data['displayed_item_image'];
+                $add_item_name=$items_data['displayed_item_name'];
+                $add_item_price=$items_data['displayed_item_rate'];
+
+            }
+        ?>
+					
             <div class="col-6">
-                <div class="col-6"><img src="image/item_images/candle-use.jpg" alt="" class="img-fluid"></div>
+                <div class="col-6"><img src="image/item_images/<?php echo $add_item_image;?>" alt="" class="img-fluid"></div>
                 <div class="col-6 cart_details">
-                    <h4>name</h4>
+                    <h4><?php echo $add_item_name; ?></h4>
                     <div class="col-12 cart_color" style="padding: 0;">
                         <div class="col-4"><p>color</p></div>
                         <div class="col-1 circle green"></div>
@@ -28,7 +54,7 @@ include ('menu_header.php');
             <div class="col-6 cart_to_details">
                 <div class="col-4">
                     <h4>Each</h4><br>
-                    <h3>$745.25</h3>
+                    <h3><?php echo $add_item_price; ?></h3>
                 </div>
                 <div class="col-4">
                     <h4>Quantity</h4><br>

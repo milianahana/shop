@@ -290,12 +290,6 @@ p{
 	height: 0;
 	transition: .5s ease;
 }
-.textshop_input{
-	background-color: transparent;
-	border: none ;
-	color: white;
-    font-size: 16px;
-}
 .con:hover .overlay {
 	height: 17%;
 	cursor: pointer;
@@ -2233,4 +2227,35 @@ p{
 	border-radius: 5px;
 	border: .5px solid #efefef;
 	font-size: 21px;
+}
+.pageBack{
+	padding: 4% 4% 2% 4%;
+	font-size: 20px;
+}
+.extraDetails{
+	text-transform: capitalize;
+    font-weight: normal;
+	text-align: center;
+    font-size: 50px;
+	margin-top: 100px;
+}
+.extraDetails h2{
+	text-decoration: 1px underline;
+}
+.extraDetails_form{
+	margin-top: 20px;
+}
+.extraDetails_form input{
+	padding: 1%;
+    font-size: 16px;
+    margin-bottom: 4%;
+	width: 49%;
+}
+.addDetails{
+	padding: 1%;
+    font-size: 16px;
+    margin-bottom: 4%;
+	background-color: #f4b991;
+	width: 25% !important;
+    border: none !important;
 }
