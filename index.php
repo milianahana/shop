@@ -108,7 +108,7 @@ else{
       					<div class="col3 five pot">
 							<div class="con2">
 								<div class="con">
-									<div class="product1"><a href="single-product.php">
+									<div class="product1"><a href="single-product.php?product_id=<?php echo $x['displayed_item_id'];?>">
 										<img src="image/item_images/<?php echo $x['displayed_item_image'];?>" alt="" class="img-fluid">
 										<div class="overlayimage"><img src="image/item_images/<?php echo $x['displayed_item_overlay_image'];?>" alt="" class="img-fluid"></div></a>
 									</div>

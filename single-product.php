@@ -1,24 +1,54 @@
 <?php
 include ('menu_header.php');
+
+if(isset($_GET['product_id']))
+{
+	$product_id=$_GET['product_id'];
+
+$select_displayed_items="SELECT `displayed_item_id`, `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate`, displayed_item_sort FROM 
+`displayed_items` WHERE `displayed_item_id`='$product_id'";
+$select_displayed_item_statement=mysqli_query($con,$select_displayed_items);
+if(!$select_displayed_item_statement)
+	{
+		echo "error in connecting";
+	}
+	else{
+
+
 ?>
 <!---------------------------------------------------------------------------	product-->
 	<div class="container-fluid">
 		<div class="col-12 single-exit"><a href="index.php">&#x292C;</a></div> 
 		<div class="container">
+			<?php
+
+				while($items_data=mysqli_fetch_array($select_displayed_item_statement))
+					{
+                $product_id=$items_data['displayed_item_id'];
+				$add_item_image=$items_data['displayed_item_image'];
+				$add_item_image2=$items_data['displayed_item_overlay_image'];
+                $add_item_name=$items_data['displayed_item_name'];
+               	$add_item_price=$items_data['displayed_item_rate'];
+					?>
 			<div class="col-6">
 				<div class="col-2 options">
-					<img src="image/Terracotta-green-use.png" alt="" class="img-fluid">
-					<img src="image/Terracotta-green-sizes.jpg" alt="" class="img-fluid">
-					<img src="image/Terracotta-green-front.png" alt="" class="img-fluid">
-					<img src="image/Terracotta-green-zoom.png" alt="" class="img-fluid">
-					<div class="col-6 single-btn"> <p> &#x0354;</p></div>
-					<div class="col-6 single-btn"> <p> &#x0355;</p></div>
+					<img src="image/item_images/<?php echo $add_item_image2;?>" alt="" class="img-fluid">
+					<!-- <img src="image/Terracotta-green-sizes.jpg" alt="" class="img-fluid"> -->
+					<!-- <img src="image/Terracotta-green-front.png" alt="" class="img-fluid"> -->
+					<!-- <img src="image/Terracotta-green-zoom.png" alt="" class="img-fluid"> -->
+					<!-- <div class="col-6 single-btn"> <p> &#x0354;</p></div> -->
+					<!-- <div class="col-6 single-btn"> <p> &#x0355;</p></div> -->
 				</div>
-				<div class="col-10 single"><img src="image/Terracotta-green-front.png" alt="" class="img-fluid"></div>
+			<?php 
+			
+		}
+            
+        	?>
+				<div class="col-10 single"><img src="image/item_images/<?php echo $add_item_image;?>" alt="" class="img-fluid"></div>
 			</div>
 			<div class="col-6 singleproduct-content">
-				<h1>Terracotta plant pot</h1>
-				<h2>Rs. 1,199.00</h2>
+				<h1><?php echo $add_item_name; ?></h1>
+				<h2><?php echo $add_item_price; ?></h2>
 				<p>Interdum a elit vestibulum in potenti urna cursus eu suspendisse adipiscing adipiscing quam ullamcorper a diam nam euismod adipiscing eleifend adipiscing odio.</p>
 				<div class="col-12 colors">
 					<div class="col-4 color-text"><h3>color: </h3></div>
@@ -36,7 +66,7 @@ include ('menu_header.php');
 					<div class="col-2 pl"><p>&#x2b;</p></div> -->
 					<input type="number" style="width: 114%;padding: 13%;" value="1">
 				</div>
-				<div class="col-9 add"><a href="add_to_cart.php">add to cart</a></div>
+				<div class="col-9 add"><a href="add_to_cart.php?product_id=<?php $add_item_id; ?>">add to cart</a></div>
 				<div class="cl"></div>
 				<div class="col-4 single-icons">&#x2928; Add to compare</div><div class="col-4">&#x2665; Add to wishlist</div><div class="col-4">&#x2928; Size Guide</div>
 				<hr>
@@ -45,8 +75,13 @@ include ('menu_header.php');
 		</div>
 		<div class="cl"></div>
 	</div>
+	<form action="#">
+		<input type="hidden" id="image" value="<?php echo $add_item_image; ?>">
+	</form>
+	<?php  }
+	} ?>
 <!---------------------------------------------------------------------------	product-banner-->
-	<div class="container-fluid details-banner">
+	<div class="container-fluid details-banner" id="bg2">
 		<div class="container details">
 			<p class="mini-head">the good mood design</p>
 			<h1>carry on stool</h1>
@@ -215,5 +250,16 @@ include ('menu_header.php');
 <?php 
 include('footer.php')
 ?>	
+
+<script>
+	var i=document.getElementById("image");
+	var bg2=document.getElementById("bg2");
+	// alert(i.value);
+// alert("url(image/" + i.value + ")");
+// myDiv.style.backgroundImage = "url('new-image.jpg')"; 
+	bg2.style.backgroundImage = "url(image/" + i.value + ")" ;
+
+</script>
+
 </body>
 </html>
