@@ -6,7 +6,7 @@
 
     if (isset($_GET['product_id'])) {
         $product_id = $_GET['product_id'];
-        $select_displayed_items2 = "SELECT `displayed_item_id`, `displayed_item_image` FROM `displayed_items` WHERE `displayed_item_id`='$product_id'";
+        $select_displayed_items2 = "SELECT * FROM `displayed_items` WHERE `displayed_item_id`='$product_id'";
         $select_displayed_items_statement2 = mysqli_query($con, $select_displayed_items2);
         if (!$select_displayed_items_statement2) {
             echo "error_selecting";
@@ -27,18 +27,20 @@
      <div class="container-fluid pageBack">
          <a href="admin_home.php">&#x2190; back</a>
      </div>
-     <div class="container-fluid extraDetails">
+     <div class="container-fluid extraImages">
          <div class="coi-12">
              <?php
+             
                 $table_products = mysqli_fetch_array($select_displayed_items_statement2);
 
                 $p_id = $table_products['displayed_item_id'];
+                $p_name = $table_products['displayed_item_name'];
                 $p_image = $table_products['displayed_item_image'];
 
                 ?>
 
-             <h2>product details</h2>
-             <img src="image/item_images/<?php echo $p_image; ?>" alt="">
+             <h1><?php echo $p_name;?></h1>
+             <img src="image/item_images/<?php echo $p_image;?>" alt="">
              <div class="col-12 admin_top_contents">
                  <form action="product_extra_details_form_action.php" class="extraDetails_form" method="post" enctype="multipart/form-data" onSubmit="return validate()">
                      <input type="file" name="item" class="item_image" id="item_image" onSubmit="return validate()">
