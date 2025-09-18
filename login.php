@@ -17,27 +17,29 @@ if(isset($_SESSION['id']))
 		echo "error";
 	}
 }	*/
-		// no need for profile so commended
+// no need for profile so commended
 ?>
 <!doctype html>
-<html><head>
-<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0";>
-<title>Untitled Document</title>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" ;>
+	<title>Untitled Document</title>
 	<link rel="stylesheet" href="css/grid_style.css">
 	<link rel="stylesheet" href="css/index_style.css">
 	<script type="text/javascript" language="javascript" src="js/jquery.min.js"></script>
 </head>
 
 <body>
-<!---------------------------------------------------------------------------	menu_bar-->
+	<!---------------------------------------------------------------------------	menu_bar-->
 	<div class="condainer-fluid menu_bar">
 		<div class="menu">
 			<?php
-				/*$login_data=mysqli_fetch_array($signin_select_statement);
+			/*$login_data=mysqli_fetch_array($signin_select_statement);
 						
 					$signin_user_profile=$login_data['signin_profile'];*/
-				?>
+			?>
 			<div class="col-3 logo">
 				<h1>indoor</h1>
 			</div>
@@ -58,63 +60,62 @@ if(isset($_SESSION['id']))
 			</div>
 		</div>
 		<div class="cl">
-		</div><hr>
+		</div>
+		<hr>
 	</div>
 	<div class="container-fluid signin-page">
 		<div class="col-12 login_common_frame">
-		<div class="col-4 form">
-			<h1>Get started</h1>
-			<p>Enter your credentials to login your account</p>
-			<form action="login_action.php" class="formtags" method="post" onSubmit="return validate()">
-				<label style="margin-left:45px;color:#777;">Email</label><br>
-      			<input placeholder="Username/Email" type="text" class="email" id="em" name="email" onChange="removeValidation('em');"><br>
-				<label style="margin-left:45px;color:#777;">Password</label><br>
-      			<input placeholder="Password" type="password" class="password" id="pass" name="password" onChange="removeValidation('pass');"><br>
-				<a href="#" class="forgot_pass">forgot password?</a>
-      			<input type="submit" name="submit" value="Sign In" class="signin" style="background-color: #F2CC07;">
-				<div class="signin_app">
-					<a class="google"><img src="image/google.png" width="13%;">Sign in with Google</a>
-					<a class="google"><img src="image/facebook(2).png" width="13%;">Sign in with Facebook</a>
-				</div>
-      		</form>
-			<p class="sign_para">Don't have an account yet? <a href="signin.php">SignIn</a></p>
-		</div>
-		<div class="col-8 form-image"><img src="image/about-banner.jpg" alt="" class="img-fluid"></div>
+			<div class="col-4 form">
+				<h1>Get started</h1>
+				<p>Enter your credentials to login your account</p>
+				<form action="login_action.php" class="formtags" method="post" onSubmit="return validate()">
+					<label style="margin-left:45px;color:#777;">Email</label><br>
+					<input placeholder="Username/Email" type="text" class="email" id="em" name="email" onChange="removeValidation('em');"><br>
+					<label style="margin-left:45px;color:#777;">Password</label><br>
+					<input placeholder="Password" type="password" class="password" id="pass" name="password" onChange="removeValidation('pass');"><br>
+					<a href="#" class="forgot_pass">forgot password?</a>
+					<input type="submit" name="submit" value="Sign In" class="signin" style="background-color: #F2CC07;">
+					<div class="signin_app">
+						<a class="google"><img src="image/google.png" width="13%;">Sign in with Google</a>
+						<a class="google"><img src="image/facebook(2).png" width="13%;">Sign in with Facebook</a>
+					</div>
+				</form>
+				<p class="sign_para">Don't have an account yet? <a href="signin.php">SignIn</a></p>
 			</div>
+			<div class="col-8 form-image"><img src="image/about-banner.jpg" alt="" class="img-fluid"></div>
+		</div>
 	</div>
 	<script>
-	   function validate(){
-		   var em=document.getElementById("em");
-		   var pass=document.getElementById("pass");
-		   var f=0;
+		function validate() {
+			var em = document.getElementById("em");
+			var pass = document.getElementById("pass");
+			var f = 0;
 
 
-		   if(em.value=="")
-		   {
-			   em.style.border="2px solid red";
-			   em.focus();
-			   f=1;
-		   }
-		   if(pass.value=="")
-		   {
-			   pass.style.border="2px solid red";
-			   pass.focus();
-			   f=1;
-		   }
-		   if(f==0)
-			   {
-				   return true;
-			   }
-		   else{
-			   return false;
-		   }
-	   }
-			function removeValidation(id){
-				var em=document.getElementById(id);
-
-				em.style.border="";
-
+			if (em.value == "") {
+				em.style.border = "2px solid red";
+				em.focus();
+				f = 1;
 			}
+			if (pass.value == "") {
+				pass.style.border = "2px solid red";
+				pass.focus();
+				f = 1;
+			}
+			if (f == 0) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		function removeValidation(id) {
+			var em = document.getElementById(id);
+
+			em.style.border = "";
+
+		}
 	</script>
 </body>
+
 </html>

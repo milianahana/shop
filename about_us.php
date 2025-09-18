@@ -1,12 +1,12 @@
 <?php
-include ('menu_header.php');
+include('menu_header.php');
 
 
- if(isset($_SESSION['id'])) {
-    $login_id = $_SESSION['id'];
+if (isset($_SESSION['id'])) {
+	$login_id = $_SESSION['id'];
 ?>
 
-<!---------------------------------------------------------------------------	about_banner-->
+	<!---------------------------------------------------------------------------	about_banner-->
 	<div class="container-fluid aboutus-topbanner">
 		<div class="container aboutus-top">
 			<div class="col-4">
@@ -26,7 +26,7 @@ include ('menu_header.php');
 		</div>
 		<div class="cl"></div>
 	</div>
-<!---------------------------------------------------------------------------	about_onlinestore-->
+	<!---------------------------------------------------------------------------	about_onlinestore-->
 	<div class="container-fluid">
 		<div class="container about-online">
 			<div class="col-6 about-online-image op">
@@ -37,21 +37,21 @@ include ('menu_header.php');
 				<h1>About our online store</h1>
 				<span>Risus suspendisse a orci penatibus a felis suscipit consectetur vestibulum sodales dui cum ultricies lacus interdum.</span>
 				<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
-					 He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff.
-					 Dictumst per ante cras suscipit nascetur ullamcorper in nullam fermentum condimentum torquent iaculis reden posuere potenti viverra condimentum 
-					 dictumst id tellus suspendisse
-				convallis condimentum.</p>
+					He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff.
+					Dictumst per ante cras suscipit nascetur ullamcorper in nullam fermentum condimentum torquent iaculis reden posuere potenti viverra condimentum
+					dictumst id tellus suspendisse
+					convallis condimentum.</p>
 				<hr>
-				<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. 
+				<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
 					He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff.
 					Dictumst per ante cras suscipit nascetur ullamcorper in nullam fermentum condimentum torquent iaculis reden posuere potenti viverra condimentum dictumst
-					 id tellus suspendisse
-				convallis condimentum.</p>
+					id tellus suspendisse
+					convallis condimentum.</p>
 			</div>
 		</div>
 		<div class="cl"></div>
 	</div>
-<!---------------------------------------------------------------------------	about_team-->
+	<!---------------------------------------------------------------------------	about_team-->
 	<div class="container-fluid">
 		<div class="container about-team">
 			<h4>words about us</h4>
@@ -82,7 +82,7 @@ include ('menu_header.php');
 		</div>
 		<div class="cl"></div>
 	</div>
-<!---------------------------------------------------------------------------	about_view-->
+	<!---------------------------------------------------------------------------	about_view-->
 	<div class="container-fluid about-view-bg">
 		<div class="container about-view">
 			<div class="col-6 about-view-para">
@@ -99,7 +99,8 @@ include ('menu_header.php');
 					<div class="col-6 rightspace">
 						<h1 class="value" name="2314">0</h1>
 						<h2>happy</h2>
-					</div><hr>
+					</div>
+					<hr>
 					<div class="col-6 lineright">
 						<h1 class="value" name="123">0</h1>
 						<h2>company</h2>
@@ -107,7 +108,8 @@ include ('menu_header.php');
 					<div class="col-6 rightspace">
 						<h1 class="value" name="2">0</h1>
 						<h2>offices</h2>
-					</div><hr>
+					</div>
+					<hr>
 					<div class="col-6 lineright">
 						<h1 class="value" name="78">0</h1>
 						<h2>completed</h2>
@@ -121,7 +123,7 @@ include ('menu_header.php');
 		</div>
 		<div class="cl"></div>
 	</div>
-<!---------------------------------------------------------------------------	about_video-->
+	<!---------------------------------------------------------------------------	about_video-->
 	<div class="container-fluid about-last">
 		<div class="container about-video">
 			<div class="col-6 about-video-para1">
@@ -133,24 +135,23 @@ include ('menu_header.php');
 				<img src="image/gallery5.jpg" alt="" class="img-fluid">
 				<h3>Design & development process demonstration</h3>
 				<h4>A wonderful serenity has taken possession of my entire soul,like these sweet mornings of spring which I enjoy with my whole heart.</h4>
-			</div><hr>
+			</div>
+			<hr>
 		</div>
 		<div class="cl"></div>
 	</div>
 
-<?php 
-include('footer.php');
-
-} 
-	else{ 
+<?php
+	include('footer.php');
+} else {
 ?>
-<div class="container-fluid">
-	<div class="col-12 error_pages3">
-		<h1>404</h1>
-		<h2>PAGE NOT FOUND</h2>
-		<p>Something went wrong,Login for more access</p>
-		<a href="login.php">LOGIN</a><br>
-		<a href="index.php" class="back">GO BACK</a>
+	<div class="container-fluid">
+		<div class="col-12 error_pages3">
+			<h1>404</h1>
+			<h2>PAGE NOT FOUND</h2>
+			<p>Something went wrong,Login for more access</p>
+			<a href="login.php">LOGIN</a><br>
+			<a href="index.php" class="back">GO BACK</a>
+		</div>
 	</div>
-</div>
 <?php } ?>
