@@ -2788,12 +2788,25 @@ p {
 ==================================================================================================================
 ===================================================================================================================
 =========================================.extraImages*/
-.extraImages{
-	text-transform: capitalize;
-    font-weight: normal;
-}
-.extraImages h1{
+.extraImages h2{
 	padding: 0 4% 2% 4%;
+	text-transform: capitalize;
+	text-decoration: underline;
+}
+.extraImage_head{
+	width: 100%;
+	padding: 0 4% 2% 4%;;
+}
+.image_add_table{
+	width: 100%;
+}
+.extraDetails_form h1{
+	text-transform: capitalize;
+	padding-bottom: 2%;
+	padding-top: 10%;
+}
+.extraDetails_form p{
+	padding-bottom: 1%;
 }
 /*=============================================================================================================
 ==================================================================================================================
