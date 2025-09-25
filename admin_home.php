@@ -27,6 +27,17 @@
 
  <body>
  	<div class="container-fluid admin_menu_logo">
+ 		<div class="col-1 admin_menu-bar">
+ 			<div class="col-12 admin_menu-button">
+ 				<div class="b_home"><button type="button" onClick="displayHome()"><img src="image/admin_home.png" alt="" class="admin_menu" width="85%"></button></div><br>
+ 				<div class="b_menu"><button type="button" onClick="displayMsg()"><img src="image/admin_menu.png" alt="" class="admin_menu" width="85%"></button></div><br>
+ 				<div class="b_analyse"><button type="button" onClick="displayProducts()"><img src="image/admin_product.png" alt="" class="admin_analyse" width="90%"></button></div><br>
+ 				<div class="b_dark"><button type="button" onClick="displayDark()"><img src="image/admin_dark.png" alt="" class="admin_dark" width="90%"></button></div><br>
+ 				<div class="b_bright"><button type="button" onClick="displayBright()"><img src="image/admin_bright.png" alt="" class="admin_bright" width="90%"></button></div><br>
+ 				<div class="b_profile"><button type="button" onClick="displayProfile()"><img src="image/admin_profile.png" alt="" class="admin_profile" width="100%"></button></div><br>
+ 				<div class="b_logout"><button type="button" onClick="displayLogin()"><img src="image/admin_logout.png" alt="" class="admin_logout" width="90%"></button></div><br>
+ 			</div>
+ 		</div>
  		<div class="col-12 admin_logobar">
  			<?php
 
@@ -43,17 +54,6 @@
  			</div>
  			<div class="col-1">
  				<img src="image/profiles_pictures/<?php echo $admin_profile; ?>" alt="" width="40%">
- 			</div>
- 		</div>
- 		<div class="col-1 admin_menu-bar">
- 			<div class="col-12 admin_menu-button">
- 				<div class="b_home"><button type="button" onClick="displayHome()"><img src="image/admin_home.png" alt="" class="admin_menu" width="85%"></button></div><br>
- 				<div class="b_menu"><button type="button" onClick="displayMsg()"><img src="image/admin_menu.png" alt="" class="admin_menu" width="85%"></button></div><br>
- 				<div class="b_analyse"><button type="button" onClick="displayProducts()"><img src="image/admin_product.png" alt="" class="admin_analyse" width="90%"></button></div><br>
- 				<div class="b_dark"><button type="button" onClick="displayDark()"><img src="image/admin_dark.png" alt="" class="admin_dark" width="90%"></button></div><br>
- 				<div class="b_bright"><button type="button" onClick="displayBright()"><img src="image/admin_bright.png" alt="" class="admin_bright" width="90%"></button></div><br>
- 				<div class="b_profile"><button type="button" onClick="displayProfile()"><img src="image/admin_profile.png" alt="" class="admin_profile" width="100%"></button></div><br>
- 				<div class="b_logout"><button type="button" onClick="displayLogin()"><img src="image/admin_logout.png" alt="" class="admin_logout" width="90%"></button></div><br>
  			</div>
  		</div>
  		<div class="cl"></div>
@@ -240,7 +240,7 @@
  		</div>
  		<div class="cl"></div>
  		<div class="col-12 admin_common_product" id="products" style="display: none;">
- 			<div class="col-5" style="background-color: white; margin: 0 40px;">
+ 			<div class="col-5" style="background-color: white; margin: 0 40px; border-radius:10px;">
  				<div class="col-12 add_items">
  					<div class="col-6">
  						<h3>Products</h3>
@@ -282,7 +282,7 @@
  										<td><?php echo $p_price; ?></td>
  										<td><?php echo $p_quandity; ?></td>
  										<td><?php echo $p_sort; ?></td>
- 										<td style="background-color:#F1F9F9;"><a href="product_extra_details_form.php?product_id=<?php echo $p_id; ?>" style="color: black;position:relative;">add details</a></td>
+ 										<td style="background-color:#F1F9F9;"><a href="product_extra_details_form.php?product_id=<?php echo $p_id; ?>" style="color: black;">add details</a></td>
  									</tr>
  							<?php
 									}
@@ -292,7 +292,7 @@
  						</div>
  				</div>
  			</div>
- 			<div class="col-6 " style="background-color: white">
+ 			<div class="col-6 " style="background-color: white; border-radius:10px;">
  				<div class="col-12 add_items">
  					<div class="col-6">
  						<h3>Employees</h3>
@@ -318,6 +318,71 @@
  					</table>
  				</div>
  			</div>
+			<?php
+
+						$select_displayed_items = "SELECT `displayed_item_image`, `displayed_item_name`,
+						 `displayed_item_category`, `displayed_item_rate`, displayed_item_sort FROM  `displayed_items`";
+						$select_displayed_item_statement = mysqli_query($con, $select_displayed_items);
+						if (!$select_displayed_item_statement) {
+							echo "error_selecting";
+						} else {
+
+						?>
+ 			<?php
+
+				while ($items_data = mysqli_fetch_array($select_displayed_item_statement)) {
+					$add_item_image = $items_data['displayed_item_image'];
+					$add_item_name = $items_data['displayed_item_name'];
+					$add_item_price = $items_data['displayed_item_rate'];
+
+				?>
+ 				<div class="slideshow-container">
+ 					<div class="mySlides fade">
+ 						<div class="col-12" style="background-color: white;border-radius:10px; margin:40px; width:94%; margin-left: -200px;">
+ 							<div class="col-6"><img src="image/item_images/<?php echo $add_item_image; ?>" alt="image"></div>
+ 							<div class="col-6">
+ 								<div class="col-6 cart_details">
+ 									<h1><?php echo $add_item_name;?></h1>
+ 									<div class="col-12 cart_color" style="padding: 0;">
+ 										<div class="col-4">
+ 											<p>color</p>
+ 										</div>
+ 										<div class="col-1 circle green"></div>
+ 									</div>
+ 									<div class="col-12 cart_color" style="padding: 0;">
+ 										<div class="col-4">
+ 											<p>Size</p>
+ 										</div>
+ 										<div class="col-1">S</div>
+ 									</div>
+ 									<div class="col-12 cart_color" style="padding: 0;">
+ 										<div class="col-6">
+ 											<p>In Stock</p>
+ 										</div>
+ 									</div>
+ 								</div>
+ 								<div class="col-6 cart_to_details">
+ 									<div class="col-4">
+ 										<h4>Each</h4><br>
+ 										<h3><?php echo $add_item_price;?></h3>
+ 									</div>
+ 									<div class="col-4">
+ 										<h4>Quantity</h4><br>
+ 										<input type="number" class="count">
+ 									</div>
+ 									<div class="col-4" style="margin-bottom: 90%;">
+ 										<h4>Total</h4><br>
+ 										<h3>$745.25</h3>
+ 									</div>
+ 									<a href="product_extra_details.php" class="view_btn">View List</a>
+ 								</div>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<a class="prev2" onclick="plusSlides(-1)">❮</a>
+ 					<a class="next2" onclick="plusSlides(1)">❯</a>
+ 				</div>
+ 			<?php } } ?>
  		</div>
  		<div class="cl"></div>
  		<div class="col-12 admin_profile" id="profile" style="display: none;">
@@ -450,6 +515,35 @@
  		document.getElementById("home").style.display = "none";
  		document.getElementById("msg").style.display = "none";
  		document.getElementById("profile").style.display = "block";
+ 	}
+ </script>
+ <script>
+ 	let slideIndex = 1;
+ 	showSlides(slideIndex);
+
+ 	function plusSlides(n) {
+ 		showSlides(slideIndex += n);
+ 	}
+
+ 	function currentSlide(n) {
+ 		showSlides(slideIndex = n);
+ 	}
+
+ 	function showSlides(n) {
+ 		let i;
+ 		let slides = document.getElementsByClassName("mySlides");
+ 		let dots = document.getElementsByClassName("dot");
+ 		if (n > slides.length) {
+ 			slideIndex = 1
+ 		}
+ 		if (n < 1) {
+ 			slideIndex = slides.length
+ 		}
+ 		for (i = 0; i < slides.length; i++) {
+ 			slides[i].style.display = "none";
+ 		}
+
+ 		slides[slideIndex - 1].style.display = "block";
  	}
  </script>
 

@@ -61,7 +61,7 @@ include('indoor_database.php');
 							<td>
 							<td style="background-color:#F1F9F9;width:8%;"><a href="product_images_addForm.php?product_id=<?php echo $p_id; ?>" style="color: black;position:relative;">add images</a></td>
 							<td style="background-color:#F1F9F9;width:8%;"><a href="product_extra_details_form.php?product_id=<?php echo $p_id; ?>" style="color: black;position:relative;">add details</a></td>
-							<td style="background-color:#F1F9F9;width:8%;"><a href="product_extra_details_form.php?product_id=<?php echo $p_id; ?>" style="color: black;position:relative;">details</a></td>
+							<td style="background-color:#F1F9F9;width:8%;"><a href="singleProductDetails.php?product_id=<?php echo $p_id; ?>" style="color: black;position:relative;">details</a></td>
 						</tr>
 				<?php
 					}
