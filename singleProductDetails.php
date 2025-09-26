@@ -40,23 +40,24 @@
          <div class="col-9" style="margin-left: 15%;margin-top:5%;">
              <div class="col-6"><img src="image/item_images/<?php echo $p_image; ?>" alt="image" class="img-fluid"></div>
              <div class="col-6">
-                 <h6>scandal by the carts</h6>
-                 <h4>PRODUCT CODE:45N08N71KM</h4>
-                 <h1><?php echo $p_name; ?></h1>
+                 <h6 style="padding: 2% 0;">scandal by the carts</h6>
+                 <h4 style="padding: 2% 0;">PRODUCT CODE:45N08N71KM</h4>
+                 <h1 style="padding: 2% 0 5% 0; text-transform:capitalize;"><?php echo $p_name; ?></h1>
                  <hr>
-                 <p>descrption Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                 <p style="padding: 5% 0;">descrption Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                      It has survived not only five centuries,
                      but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                  <hr>
-                 <h4>multiple colors</h4>
+                 <div class="col-6"><h4 style="padding: 5% 0;">more images</h4></div>
+                 <div class="col-6"><h4 style="padding: 5% 0;"><a href="#">add</a></h4></div>
                  <div class="col-2"><img src="image/item_images/<?php echo $p_image; ?>" alt="image" class="img-fluid"></div>
                  <div class="col-2"><img src="image/item_images/<?php echo $p_image; ?>" alt="image" class="img-fluid"></div>
                  <div class="col-2"><img src="image/item_images/<?php echo $p_image; ?>" alt="image" class="img-fluid"></div>
              </div>
          </div>
          <div class="col-9" style="margin-left: 15%;">
-             <h3>more</h3>
+             <h3>multiple colors</h3>
          </div>
          <div class="cl"></div>
      </div>

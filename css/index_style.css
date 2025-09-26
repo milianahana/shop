@@ -811,6 +811,7 @@ p {
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 400px;
+	margin-top: 5%;
 }
 
 .details {
@@ -821,7 +822,6 @@ p {
 	font-size: 17px;
 	color: rgba(100, 100, 100, 1.00);
 	text-transform: capitalize;
-	margin-top: 5% !important;
 	margin-bottom: 0 !important;
 	padding-top: 8%;
 }
@@ -832,10 +832,6 @@ p {
 	text-decoration: underline #DAD4B6;
 	font-size: 45px;
 	font-weight: normal;
-}
-
-.details p {
-	margin: 0 0 6% 0;
 }
 
 .buy {
@@ -2038,16 +2034,29 @@ p {
 
 .add_items_content h1 {
 	text-transform: capitalize;
-	padding: 70px 0 100px 0;
+	text-align: center;
+	margin: 5%;
+	text-decoration: underline 1px;
+}
+
+.items_add {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-left: 17%;
 }
 
 .items_add input {
-	width: 100%;
-	padding: 2.5%;
-	font-size: 16px;
-	margin-bottom: 5%;
-	border: none;
-	border-bottom: 1px solid black;
+	width: 25%;
+	padding: 1%;
+	margin: 1%;
+}
+
+.items_add textarea {
+	width: 52.5%;
+	margin: 1%;
+	padding: 3%;
 }
 
 .addItem {

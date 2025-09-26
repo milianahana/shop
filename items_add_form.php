@@ -42,20 +42,22 @@ if (!$select_login_table_statement) {
 	</div>
 	<div class="container-fluid add_items_top">
 		<div class="contain">
-			<div class="col-6 add_items_image">
-				<img src="image/add_item_illustration.jpg" alt="" class="img-fluid">
-			</div>
-			<div class="col-6 add_items_content">
+			<div class="add_items_content">
 				<h1>add new items</h1>
 				<form action="items_add_form_action.php" class="items_add" method="post" enctype="multipart/form-data" onSubmit="return validate()">
 					<input type="file" name="item" class="item_image" id="item_image" onSubmit="return validate()">
-					<input type="file" name="overlay_item" class="item_image" id="item_overlay_image" onSubmit="return validate()">
+					<input type="file" name="overlay_item" class="item_image" id="item_overlay_image" onSubmit="return validate()"><br>
 					<input placeholder="Item" type="text" class="name" name="item_name" id="item_name" onSubmit="return validate()">
 					<input placeholder="Category" type="text" class="category" name="item_category" id="item_category" onSubmit="return validate()">
+					<textarea name="des" placeholder="Describtion" id=""></textarea><br>
 					<input placeholder="Price" type="text" class="price" name="item_price" id="item_price" onSubmit="return validate()">
 					<input placeholder="Quandity" type="text" class="quandity" name="item_quandity" id="item_quandity" onSubmit="return validate()">
-					<input placeholder="Sort" type="text" class="sort" name="item_sort" id="item_sort" onSubmit="return validate()">
-					<input type="submit" name="add" value="Add" class="addItem">
+					<input placeholder="Sort" type="text" class="sort" name="item_sort" id="item_sort" onSubmit="return validate()"><br>
+					<input placeholder="HeadingOne" type="text" class="sort" name="h1" id="h1" onSubmit="return validate()">
+					<textarea name="des1" placeholder="Describtion1" id="des1"></textarea>
+					<input placeholder="HeadingTwo" type="text" class="sort" name="h2" id="h2" onSubmit="return validate()">
+					<textarea name="des2" placeholder="Describtion2" id="des2"></textarea>
+					<input type="submit" name="add" value="Add" class="addItem" style="margin-left: 15%;">
 				</form>
 			</div>
 			<div class="cl"></div>

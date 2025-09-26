@@ -3,7 +3,7 @@
 
 	include('indoor_database.php');
 
-	$select_login_table = "SELECT`login_profile` FROM `login`";
+	$select_login_table = "SELECT * FROM `login`";
 	$select_login_table_statement = mysqli_query($con, $select_login_table);
 	if (!$select_login_table_statement) {
 		echo "CONNECTION ERROR";
@@ -44,6 +44,10 @@
 				$persnol_data = mysqli_fetch_array($select_login_table_statement);
 
 				$admin_profile = $persnol_data['login_profile'];
+				$admin_name = $persnol_data['login_username'];
+				$admin_email = $persnol_data['login_email'];
+				$admin_profile = $persnol_data['login_profile'];
+
 
 				?>
  			<div class="col-8 logo_image">
@@ -250,7 +254,8 @@
  				<div class="col-12 admin_products_details">
  					<?php
 
-						$select_displayed_items2 = "SELECT `displayed_item_id`, `displayed_item_name`, `displayed_item_rate`, `displayed_item_quandity`, `displayed_item_sort` FROM `displayed_items`";
+						$select_displayed_items2 = "SELECT `displayed_item_id`, `displayed_item_name`, `displayed_item_rate`, `displayed_item_quandity`, `displayed_item_sort` 
+						FROM `displayed_items`";
 						$select_displayed_items_statement2 = mysqli_query($con, $select_displayed_items2);
 						if (!$select_displayed_items_statement2) {
 							echo "error_selecting";
@@ -282,7 +287,7 @@
  										<td><?php echo $p_price; ?></td>
  										<td><?php echo $p_quandity; ?></td>
  										<td><?php echo $p_sort; ?></td>
- 										<td style="background-color:#F1F9F9;"><a href="product_extra_details_form.php?product_id=<?php echo $p_id; ?>" style="color: black;">add details</a></td>
+ 										<td style="background-color:#F1F9F9;"><a href="productExtraColorForm.php?product_id=<?php echo $p_id; ?>" style="color: black;position:relative;">extra color</a></td>
  									</tr>
  							<?php
 									}
@@ -318,71 +323,73 @@
  					</table>
  				</div>
  			</div>
-			<?php
-
-						$select_displayed_items = "SELECT `displayed_item_image`, `displayed_item_name`,
-						 `displayed_item_category`, `displayed_item_rate`, displayed_item_sort FROM  `displayed_items`";
-						$select_displayed_item_statement = mysqli_query($con, $select_displayed_items);
-						if (!$select_displayed_item_statement) {
-							echo "error_selecting";
-						} else {
-
-						?>
  			<?php
 
-				while ($items_data = mysqli_fetch_array($select_displayed_item_statement)) {
-					$add_item_image = $items_data['displayed_item_image'];
-					$add_item_name = $items_data['displayed_item_name'];
-					$add_item_price = $items_data['displayed_item_rate'];
+				$select_displayed_items = "SELECT `displayed_item_id`, `displayed_item_image`, `displayed_item_name`,
+						 `displayed_item_category`, `displayed_item_rate`, displayed_item_sort FROM  `displayed_items`";
+				$select_displayed_item_statement = mysqli_query($con, $select_displayed_items);
+				if (!$select_displayed_item_statement) {
+					echo "error_selecting";
+				} else {
 
 				?>
- 				<div class="slideshow-container">
- 					<div class="mySlides fade">
- 						<div class="col-12" style="background-color: white;border-radius:10px; margin:40px; width:94%; margin-left: -200px;">
- 							<div class="col-6"><img src="image/item_images/<?php echo $add_item_image; ?>" alt="image"></div>
- 							<div class="col-6">
- 								<div class="col-6 cart_details">
- 									<h1><?php echo $add_item_name;?></h1>
- 									<div class="col-12 cart_color" style="padding: 0;">
+ 				<?php
+
+					while ($items_data = mysqli_fetch_array($select_displayed_item_statement)) {
+						$add_item_id = $items_data['displayed_item_id'];
+						$add_item_image = $items_data['displayed_item_image'];
+						$add_item_name = $items_data['displayed_item_name'];
+						$add_item_price = $items_data['displayed_item_rate'];
+
+					?>
+ 					<div class="slideshow-container">
+ 						<div class="mySlides fade">
+ 							<div class="col-12" style="background-color: white;border-radius:10px; margin:40px; width:94%; margin-left: -200px;">
+ 								<div class="col-6"><img src="image/item_images/<?php echo $add_item_image; ?>" alt="image"></div>
+ 								<div class="col-6">
+ 									<div class="col-6 cart_details">
+ 										<h1><?php echo $add_item_name; ?></h1>
+ 										<div class="col-12 cart_color" style="padding: 0;">
+ 											<div class="col-4">
+ 												<p>color</p>
+ 											</div>
+ 											<div class="col-1 circle green"></div>
+ 										</div>
+ 										<div class="col-12 cart_color" style="padding: 0;">
+ 											<div class="col-4">
+ 												<p>Size</p>
+ 											</div>
+ 											<div class="col-1">S</div>
+ 										</div>
+ 										<div class="col-12 cart_color" style="padding: 0;">
+ 											<div class="col-6">
+ 												<p>In Stock</p>
+ 											</div>
+ 										</div>
+ 									</div>
+ 									<div class="col-6 cart_to_details">
  										<div class="col-4">
- 											<p>color</p>
+ 											<h4>Each</h4><br>
+ 											<h3><?php echo $add_item_price; ?></h3>
  										</div>
- 										<div class="col-1 circle green"></div>
- 									</div>
- 									<div class="col-12 cart_color" style="padding: 0;">
  										<div class="col-4">
- 											<p>Size</p>
+ 											<h4>Quantity</h4><br>
+ 											<input type="number" class="count">
  										</div>
- 										<div class="col-1">S</div>
- 									</div>
- 									<div class="col-12 cart_color" style="padding: 0;">
- 										<div class="col-6">
- 											<p>In Stock</p>
+ 										<div class="col-4" style="margin-bottom: 90%;">
+ 											<h4>Total</h4><br>
+ 											<h3>$745.25</h3>
  										</div>
+ 										<a href="singleProductDetails.php?product_id=<?php echo $add_item_id; ?>" style="color: black;position:relative;" class="view_btn">details</a>
  									</div>
- 								</div>
- 								<div class="col-6 cart_to_details">
- 									<div class="col-4">
- 										<h4>Each</h4><br>
- 										<h3><?php echo $add_item_price;?></h3>
- 									</div>
- 									<div class="col-4">
- 										<h4>Quantity</h4><br>
- 										<input type="number" class="count">
- 									</div>
- 									<div class="col-4" style="margin-bottom: 90%;">
- 										<h4>Total</h4><br>
- 										<h3>$745.25</h3>
- 									</div>
- 									<a href="product_extra_details.php" class="view_btn">View List</a>
  								</div>
  							</div>
  						</div>
+ 						<a class="prev2" onclick="plusSlides(-1)">❮</a>
+ 						<a class="next2" onclick="plusSlides(1)">❯</a>
  					</div>
- 					<a class="prev2" onclick="plusSlides(-1)">❮</a>
- 					<a class="next2" onclick="plusSlides(1)">❯</a>
- 				</div>
- 			<?php } } ?>
+ 			<?php }
+				} ?>
  		</div>
  		<div class="cl"></div>
  		<div class="col-12 admin_profile" id="profile" style="display: none;">
@@ -391,9 +398,9 @@
  				</div>
  				<div class="col-12 admin_profile_align">
  					<div class="col-8 admin_profile_picture">
- 						<div class="col-2"><img src="image/profiles_pictures/default_profile.png" alt=""></div>
+ 						<div class="col-2"><img src="image/profiles_pictures/<?php echo $admin_profile; ?>" alt="" width="40%"></div>
  						<div class="col-10">
- 							<p>djhfdui</p>
+ 							<p><?php echo $admin_name; ?></p>
  						</div>
  					</div>
  					<div class="col-4 admin_profile_edit" style="position:relative;"><a href="admin_profile_edit.php">edit</a></div>
@@ -405,7 +412,7 @@
  					</div>
  					<div class="col-6">
  						<h4>User Name</h4>
- 						<p class="profile_para">kvkfvjkf</p>
+ 						<p class="profile_para"><?php echo $admin_name; ?></p>
  					</div>
  				</div>
  				<div class="col-12">
@@ -430,7 +437,7 @@
  				</div>
  				<h3 style="padding-left: 25px; margin-top:5px;">My Email Address</h3>
  				<div class="col-12">
- 					<div class="email_scn"><img src="image/facebook(2).png" alt="">hendy@gmail.com</div>
+ 					<div class="email_scn"><img src="image/facebook(2).png" alt=""><?php echo $admin_email; ?></div>
  				</div>
  				<div class="col-12">
  					<a href="#">+ Add Email Address</a>

@@ -4,7 +4,7 @@ include('menu_header.php');
 if (isset($_GET['product_id'])) {
 	$product_id = $_GET['product_id'];
 
-	$select_displayed_items = "SELECT `displayed_item_id`, `displayed_item_image`, `displayed_item_overlay_image`, `displayed_item_name`, `displayed_item_category`, `displayed_item_rate`, displayed_item_sort FROM 
+	$select_displayed_items = "SELECT * FROM 
 `displayed_items` WHERE `displayed_item_id`='$product_id'";
 	$select_displayed_item_statement = mysqli_query($con, $select_displayed_items);
 	if (!$select_displayed_item_statement) {
@@ -25,6 +25,11 @@ if (isset($_GET['product_id'])) {
 					$add_item_image2 = $items_data['displayed_item_overlay_image'];
 					$add_item_name = $items_data['displayed_item_name'];
 					$add_item_price = $items_data['displayed_item_rate'];
+					$add_item_des = $items_data['displayed_item_description'];
+					$add_item_h1 = $items_data['displayed_item_h1'];
+					$add_item_h1para = $items_data['displayed_item_h1_des'];
+					$add_item_h2 = $items_data['displayed_item_h2'];
+					$add_item_h2para = $items_data['displayed_item_h2_des'];
 				?>
 					<div class="col-6">
 						<div class="col-2 options">
@@ -45,7 +50,7 @@ if (isset($_GET['product_id'])) {
 					<div class="col-6 singleproduct-content">
 						<h1><?php echo $add_item_name; ?></h1>
 						<h2><?php echo $add_item_price; ?></h2>
-						<p>Interdum a elit vestibulum in potenti urna cursus eu suspendisse adipiscing adipiscing quam ullamcorper a diam nam euismod adipiscing eleifend adipiscing odio.</p>
+						<p><?php echo $add_item_des; ?></p>
 						<div class="col-12 colors">
 							<div class="col-4 color-text">
 								<h3>color: </h3>
@@ -84,8 +89,8 @@ if (isset($_GET['product_id'])) {
 <div class="container-fluid details-banner" id="bg2">
 	<div class="container details">
 		<p class="mini-head">the good mood design</p>
-		<h1>carry on stool</h1>
-		<p>A dignissim dui varius hendrerit a mattis parturient consequat a suspendisse a phasellus hendrerit enim class dignissim et leo a potenti urna elit. In nam hac adipiscing condimentum parturient vestibulum.</p>
+		<h1><?php echo $add_item_h1; ?></h1>
+		<p style="margin-bottom: 5%;"><?php echo $add_item_h1para; ?></p>
 		<a href="#" class="buy">buy now</a>
 		<a href="#" class="brand">about brand</a>
 		<div class="cl"></div>
@@ -97,8 +102,8 @@ if (isset($_GET['product_id'])) {
 		<div class="col-6 size-image"><img src="image/item_images/<?php echo $add_item_image; ?>" alt="" width="80%"></div>
 		<div class="col-6 size-content">
 			<p class="mini-head">THE OFFECCT STOOLS</p>
-			<h1>This stools are also decently stored.</h1>
-			<p>Ullamcorper vestibulum a ad sed blandit morbi curabitur ipsum bibendum adipiscing justo molestie eget nec laoreet accumsan adipiscing.</p>
+			<h1><?php echo $add_item_h2; ?></h1>
+			<p><?php echo $add_item_h2para; ?></p>
 			<a href="#" class="buy">open pop-up</a>
 			<a href="#" class="brand">about designer</a>
 		</div>
