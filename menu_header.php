@@ -49,7 +49,7 @@ if (isset($_SESSION['id'])) {
             <div class="col-4 menu2">
                 <a href="<?php echo $login_id == "" ? "login.php" : "signout_action.php" ?>"><?php echo $login_id == "" ? "LOG IN" : "LOG OUT" ?></a>
                 <a href="wishlist.php"><img src="image/heart.png" width="25px"></a>
-                <a href="#"><img src="image/shopping-cart-add.png" width="25px"></a>
+                <a href="add_to_cart.php"><img src="image/shopping-cart-add.png" width="25px"></a>
                 <a href="#"><span class="blue-btn">Rs. 0.00</span></a>
                 <img src="image/profiles_pictures/<?php echo ($signin_user_profile); ?>" alt="Profile" class="profile-image">
             </div>

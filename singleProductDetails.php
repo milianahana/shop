@@ -37,7 +37,7 @@
 
 
             ?>
-         <div class="col-9" style="margin-left: 15%;margin-top:5%;">
+         <div class="col-9" style="margin-left: 15%;">
              <div class="col-6"><img src="image/item_images/<?php echo $p_image; ?>" alt="image" class="img-fluid"></div>
              <div class="col-6">
                  <h6 style="padding: 2% 0;">scandal by the carts</h6>
@@ -49,8 +49,12 @@
                      It has survived not only five centuries,
                      but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                  <hr>
-                 <div class="col-6"><h4 style="padding: 5% 0;">more images</h4></div>
-                 <div class="col-6"><h4 style="padding: 5% 0;"><a href="#">add</a></h4></div>
+                 <div class="col-6">
+                     <h4 style="padding: 5% 0;">more images</h4>
+                 </div>
+                 <div class="col-6">
+                     <h4 style="padding: 5% 0;"><a href="image_adding_form.php?product_id=<?php echo $p_id; ?>">add</a></h4>
+                 </div>
                  <div class="col-2"><img src="image/item_images/<?php echo $p_image; ?>" alt="image" class="img-fluid"></div>
                  <div class="col-2"><img src="image/item_images/<?php echo $p_image; ?>" alt="image" class="img-fluid"></div>
                  <div class="col-2"><img src="image/item_images/<?php echo $p_image; ?>" alt="image" class="img-fluid"></div>

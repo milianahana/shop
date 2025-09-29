@@ -40,12 +40,11 @@
              <h2>product details</h2>
              <img src="image/item_images/<?php echo $p_image; ?>" alt="">
              <div class="col-12 admin_top_contents">
-                 <form action="product_extra_details_form_action.php" class="extraDetails_form" method="post" enctype="multipart/form-data" onSubmit="return validate()">
+                 <form action="productExtraColorForm_action.php" class="extraDetails_form" method="post" enctype="multipart/form-data" onSubmit="return validate()">
                      <input type="file" name="item" class="item_image" id="item_image" onSubmit="return validate()">
-                     <input placeholder="ProductId" type="text" class="name" name="item_id" id="item_id" value="<?php echo $product_id; ?>" onSubmit="return validate()">
-                     <input placeholder="Color" type="text" class="name" name="item_color" id="item_color" onSubmit="return validate()">
+                     <input placeholder="ProductId" type="text" class="iid" name="item_id" id="item_id" value="<?php echo $product_id; ?>" onSubmit="return validate()">
+                     <input placeholder="Color" type="text" class="clr" name="item_color" id="item_color" onSubmit="return validate()">
                      <input placeholder="ColorCode" type="text" class="category" name="item_colorid" id="item_colorid" onSubmit="return validate()">
-                     <input placeholder="Size" type="text" class="price" name="item_size" id="item_size" onSubmit="return validate()"><br>
                      <input type="submit" name="add" value="Add" class="addDetails">
                  </form>
              </div>
