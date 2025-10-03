@@ -101,7 +101,7 @@ p {
 	animation-duration: 10s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-	margin-top: -15%;
+	top: -40px;
 }
 
 .para5-p {
@@ -2098,8 +2098,8 @@ p {
 
 .item_add_button a {
 	float: right;
-	border: 1px solid rgba(240, 240, 240, 1.00);
-	padding: 1% 3%;
+	border: 1px solid rgb(145 145 145);
+	padding: 1% 5%;
 	text-transform: capitalize;
 	color: black;
 }
@@ -2401,7 +2401,7 @@ p {
 	background-color: white;
 	padding: 0;
 	border-radius: 10px;
-
+	margin-bottom: 30px;
 }
 
 .admin_products_details h3 {
@@ -2421,7 +2421,7 @@ p {
 
 .products td,
 .products th {
-	padding: 2%;
+	padding: 1%;
 	text-transform: capitalize;
 }
 
@@ -2561,7 +2561,7 @@ p {
 }
 
 .admin_common_product {
-	padding: 8% 0 0 5%;
+	padding: 6% 0 0 4%;
 	background-color: #F1F1F1;
 	display: flex;
 	align-content: flex-start;
