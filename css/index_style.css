@@ -2013,165 +2013,62 @@ p {
 	border-bottom: 1px solid #E5E5E5;
 }
 
-.admin-menu {
+
+.admin_add {
+	box-shadow: 0 2px #efefef;
+	background-color: white;
 	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
 }
 
-.admin-signout {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-}
-
-.admin-profile {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-}
-
-.add-container {
-	margin-left: 13% !important;
-}
-
-.add_items_outerline {
-	border: 1px solid black;
-	padding: 0 !important;
-	border-radius: 10px;
-	height: auto;
-}
-
-.add_items_image {
-	padding: 0 !important;
-	margin-top: 3%;
-}
-
-.add_items_image img {
-	border-radius: 10px;
+.add_items_top {
+	margin-left: 15%;
 }
 
 .add_items_content h1 {
-	text-transform: capitalize;
 	text-align: center;
-	margin: 5%;
-	text-decoration: underline 1px;
-}
-
-.items_add {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
-	margin-left: 17%;
-}
-
-.items_add input {
-	width: 25%;
-	padding: 1%;
-	margin: 1%;
-}
-
-.items_add textarea {
-	width: 52.5%;
-	margin: 1%;
-	padding: 3%;
-}
-
-.addItem {
-	width: 50% !important;
-	border: none !important;
-	margin: 10% 0 0 25%;
-	background-color: #f4b991;
-}
-
-.addItem:hover {
-	cursor: pointer;
-	color: white;
-}
-
-.add_items {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	flex-direction: row;
-}
-
-.item_add_button a {
-	float: right;
-	border: 1px solid rgb(145 145 145);
-	padding: 1% 5%;
+	padding: 5% 0;
 	text-transform: capitalize;
-	color: black;
+	font-weight: bolder !important;
+	color: #222;
 }
 
-.item_add_button a:hover {
-	background-color: whitesmoke;
-	cursor: pointer;
-}
-
-.item_background {
-	background-image: url("../image/about-banner.jpg");
-	height: 1009px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.view_btn {
-	position: relative;
-	margin-left: 50%;
-	padding: 4% 10%;
+.forMain {
 	border: 1px solid black;
-	border-radius: 10px;
-	color: black
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1% 0;
 }
 
-.prev2,
-.next2 {
-	cursor: pointer;
-	position: absolute;
-	top: 100%;
-	width: auto;
-	padding: 16px;
-	margin-top: -22px;
-	color: black;
-	font-weight: bold;
-	font-size: 18px;
-	transition: 0.6s ease;
-	border-radius: 0 3px 3px 0;
-	user-select: none;
+.mainimage{
+	border: 1px solid black;
+	padding: 1%;
 }
 
-/* Position the "next button" to the right */
-.next2 {
-	right: 9%;
-	border-radius: 3px 0 0 3px;
+#item_background::file-selector-button {
+	background-color: #4CAF50;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	color: white;
+	overflow: hidden;
 }
 
-.prev2 {
-	right: 85%;
+.forBackground {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev2:hover,
-.next2:hover {
-	background-color: rgba(0, 0, 0, 0.8);
+.forname{
+	padding: 1%;
+	width: 100%;
 }
 
-.fade {
-	animation-name: fade;
-	animation-duration: 1.5s;
-}
-
-@keyframes fade {
-	from {
-		opacity: .4
-	}
-
-	to {
-		opacity: 1
-	}
-}
 
 /*=============================================================================================================
 ==================================================================================================================
@@ -2247,6 +2144,12 @@ p {
 	color: red;
 	text-transform: capitalize;
 	font-size: 18px;
+}
+
+.admin_back {
+	text-transform: capitalize;
+	font-size: 18px;
+
 }
 
 .admin_dark {

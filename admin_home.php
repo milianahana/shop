@@ -32,7 +32,7 @@
  				<div class="b_home"><button type="button" onClick="displayHome()"><img src="image/admin_home.png" alt="" class="admin_menu" width="85%"></button></div><br>
  				<div class="b_menu"><button type="button" onClick="displayMsg()"><img src="image/admin_menu.png" alt="" class="admin_menu" width="85%"></button></div><br>
  				<div class="b_analyse"><button type="button" onClick="displayProducts()"><img src="image/admin_product.png" alt="" class="admin_analyse" width="90%"></button></div><br>
- 				<div class="b_dark"><button type="button" onClick="displayDark()"><img src="image/admin_dark.png" alt="" class="admin_dark" width="90%"></button></div><br>
+ 				<div class="b_dark"><button type="button" onClick="displayStaff()"><img src="image/admin_staff.png" alt="" class="admin_dark" width="100%"></button></div><br>
  				<div class="b_bright"><button type="button" onClick="displayBright()"><img src="image/admin_bright.png" alt="" class="admin_bright" width="90%"></button></div><br>
  				<div class="b_profile"><button type="button" onClick="displayProfile()"><img src="image/admin_profile.png" alt="" class="admin_profile" width="100%"></button></div><br>
  				<div class="b_logout"><button type="button" onClick="displayLogin()"><img src="image/admin_logout.png" alt="" class="admin_logout" width="90%"></button></div><br>
@@ -300,14 +300,17 @@
  						</div>
  				</div>
  			</div>
- 			<!-- <div class="col-6 " style="background-color: white; border-radius:10px;">
+ 		</div>
+ 		<div class="cl"></div>
+ 		<div class="col-12 admin_common_product" id="staff" style="display: none;height:1000px;">
+ 			<div style="background-color: white;  margin: 0 40px; border-radius:10px;">
  				<div class="col-12 add_items">
  					<div class="col-6">
  						<h3>Employees</h3>
  					</div>
  					<div class="col-6 item_add_button"><a href="labour_add.php">add</a></div>
  				</div>
- 				<div class="col-12" style="overflow: scroll;height: 394px;">
+ 				<div class="col-12 admin_products_details" style="overflow: scroll;height: auto;">
  					<table class="products">
  						<thead style="position: sticky;top:0;">
  							<tr class="products_heading">
@@ -325,7 +328,7 @@
  						</tr>
  					</table>
  				</div>
- 			</div> -->
+ 			</div>
  		</div>
  		<div class="cl"></div>
  		<div class="col-12 admin_profile" id="profile" style="display: none;">
@@ -436,20 +439,31 @@
  		document.getElementById("home").style.display = "block";
  		document.getElementById("msg").style.display = "none";
  		document.getElementById("products").style.display = "none";
+ 		document.getElementById("staff").style.display = "none";
  		document.getElementById("profile").style.display = "none";
  	}
 
  	function displayMsg() {
- 		document.getElementById("msg").style.display = "block";
  		document.getElementById("home").style.display = "none";
+ 		document.getElementById("msg").style.display = "block";
  		document.getElementById("products").style.display = "none";
+ 		document.getElementById("staff").style.display = "none";
  		document.getElementById("profile").style.display = "none";
  	}
 
  	function displayProducts() {
- 		document.getElementById("products").style.display = "block";
  		document.getElementById("home").style.display = "none";
  		document.getElementById("msg").style.display = "none";
+ 		document.getElementById("products").style.display = "block";
+ 		document.getElementById("staff").style.display = "none";
+ 		document.getElementById("profile").style.display = "none";
+ 	}
+
+ 	function displayStaff() {
+ 		document.getElementById("products").style.display = "none";
+ 		document.getElementById("home").style.display = "none";
+ 		document.getElementById("msg").style.display = "none";
+ 		document.getElementById("staff").style.display = "block";
  		document.getElementById("profile").style.display = "none";
  	}
 
@@ -457,6 +471,7 @@
  		document.getElementById("products").style.display = "none";
  		document.getElementById("home").style.display = "none";
  		document.getElementById("msg").style.display = "none";
+ 		document.getElementById("staff").style.display = "none";
  		document.getElementById("profile").style.display = "block";
  	}
  </script>
